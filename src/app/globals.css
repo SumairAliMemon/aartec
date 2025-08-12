@@ -62,8 +62,37 @@ body {
   }
 }
 
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
 .animate-gradient {
   background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 20s linear infinite;
+}
+
+.pause-animation {
+  animation-play-state: paused;
+}
+
+.hover\:pause-animation:hover {
+  animation-play-state: paused;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

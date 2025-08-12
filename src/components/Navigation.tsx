@@ -1,18 +1,32 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const Navigation = () => {
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const navItems = [
+
     {
-      href: '#brand',
+      href: '/publish',
+      label: 'Publish',
+      icon: (
+        <svg className="w-5 h-5  group-hover:text-purple-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 19l2-2m0 0l7-7a2.828 2.828 0 114 4l-7 7-2 2H5v-2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 6a2 2 0 112.828 2.828A2 2 0 0115 6z" />
+        </svg>
+      )
+    },
+    {
+      href: '/brand',
       label: 'Brand',
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -21,16 +35,18 @@ const Navigation = () => {
       )
     },
     {
-      href: '#how-it-works',
-      label: 'Masters of Business Creation',
+      href: '/mbc',
+      label: 'MBC Program',
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
         </svg>
       )
     },
     {
-      href: '#about',
+      href: '/about',
       label: 'About',
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,7 +55,7 @@ const Navigation = () => {
       )
     },
     {
-      href: '#affiliates',
+      href: '/affiliates',
       label: 'Affiliates',
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -48,7 +64,7 @@ const Navigation = () => {
       )
     },
      {
-      href: '#careers',
+      href: '/careers',
       label: 'Careers',
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,19 +99,26 @@ const Navigation = () => {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center space-x-1 group"
-              >
-                <span className="group-hover:text-blue-600 transition-colors">
-                  {item.icon}
-                </span>
-                <span>{item.label}</span>
-              </Link>
-            ))}
-            
+            {navItems.map((item) => {
+              const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={
+                    `font-medium flex items-center space-x-1 group transition-colors ` +
+                    (isActive
+                      ? 'text-blue-700 font-bold border-b-2 border-blue-600 bg-blue-50/60 px-3 py-1 rounded'
+                      : 'text-gray-700 hover:text-blue-600')
+                  }
+                >
+                  <span className="group-hover:text-blue-600 transition-colors">
+                    {item.icon}
+                  </span>
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
             <Link
               href="#get-started"
               className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2.5 rounded-full hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 font-semibold flex items-center space-x-2"
