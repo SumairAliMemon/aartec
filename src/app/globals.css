@@ -96,3 +96,18 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Hide scrollbars for infinite scroll gallery */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth touch scrolling for mobile */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+}
