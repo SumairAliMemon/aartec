@@ -1,5 +1,16 @@
 "use client";
 import React, { useState } from 'react';
+import {
+  FaWhatsapp,
+  FaEnvelope,
+  FaLinkedinIn,
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaYoutube,
+  FaTiktok
+} from "react-icons/fa";
+
 
 const AFFILIATE_BASE = 'https://aartec.com/?a=YOUR_AFFILIATE'
 
@@ -145,7 +156,7 @@ const Disclosure = ({ question, answer }: { question: string; answer: string }) 
 
   return (
     <div className="bg-white rounded-lg border border-blue-100 overflow-hidden shadow-sm">
-      <button 
+      <button
         className="flex w-full justify-between items-center px-6 py-4 text-left hover:bg-blue-50 transition-colors"
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -190,7 +201,7 @@ const RegistrationForm = () => {
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full opacity-50 -translate-y-12 translate-x-12"></div>
       <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full opacity-30 translate-y-8 -translate-x-8"></div>
-      
+
       <div className="relative z-10">
         <div className="text-center mb-4">
           <div className="flex items-center justify-center gap-3 mb-2">
@@ -203,7 +214,7 @@ const RegistrationForm = () => {
           </div>
           <p className="text-black font-bold">Your username is your Coupon Code</p>
         </div>
-        
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
@@ -380,7 +391,7 @@ export default function Home() {
           {/* Decorative background elements */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full opacity-50 -translate-y-16 translate-x-16"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full opacity-30 translate-y-12 -translate-x-12"></div>
-          
+
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
@@ -460,12 +471,12 @@ export default function Home() {
               <li>Appear on podcasts — introduce yourself as a cofounder.</li>
               <li>Host events and hand out flyers with your coupon code.</li>
             </ul>
-            
+
             {/* Added promotional image */}
             <div className="mt-4">
-              <img 
-                src="/Screenshot 2025-08-13 122145.png" 
-                alt="Promotional Strategy" 
+              <img
+                src="/Screenshot 2025-08-13 122145.png"
+                alt="Promotional Strategy"
                 className="w-full h-auto rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
               />
             </div>
@@ -491,71 +502,86 @@ export default function Home() {
               <p className="text-lg font-bold text-center text-gray-800 mb-6">
                 Now get out there. You sell. You earn. We build. Everyone wins.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-3">
-                <a href="#" className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                  <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">W</span>
+                {/* WhatsApp */}
+                <a href="https://api.whatsapp.com/send?phone=447733003930" target="_blank" rel="noopener noreferrer"
+                  className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaWhatsapp />
                   </div>
                   <span className="font-semibold text-gray-700 group-hover:text-blue-700">WhatsApp</span>
-                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
+                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-green-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
                 </a>
 
-                <a href="#" className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">@</span>
+                {/* Email */}
+                <a href="mailto:imagine@aartec.com"
+                  className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaEnvelope />
                   </div>
                   <span className="font-semibold text-gray-700 group-hover:text-blue-700">Email</span>
-                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
+                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-red-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
                 </a>
 
-                <a href="#" className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">in</span>
+                {/* LinkedIn */}
+                <a href="https://www.linkedin.com/company/aartec/" target="_blank" rel="noopener noreferrer"
+                  className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="w-8 h-8 bg-blue-700 rounded-full flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaLinkedinIn />
                   </div>
                   <span className="font-semibold text-gray-700 group-hover:text-blue-700">LinkedIn</span>
-                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
+                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-blue-700 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
                 </a>
 
-                <a href="#" className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">f</span>
+                {/* Facebook */}
+                <a href="https://www.facebook.com/people/Aartec/61561667166483/" target="_blank" rel="noopener noreferrer"
+                  className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaFacebookF />
                   </div>
                   <span className="font-semibold text-gray-700 group-hover:text-blue-700">Facebook</span>
-                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 origin-left transition-transform duration-300 group
-                  -hover:scale-x-100" aria-hidden="true" />
+                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
                 </a>
 
-                <a href="#" className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                  <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">I</span>
+                {/* Instagram */}
+                <a href="https://www.instagram.com/aartec1/#" target="_blank" rel="noopener noreferrer"
+                  className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaInstagram />
                   </div>
                   <span className="font-semibold text-gray-700 group-hover:text-blue-700">Instagram</span>
-                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
+                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-pink-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
                 </a>
 
-                <a href="#" className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                  <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">X</span>
+                {/* Twitter/X */}
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaTwitter />
                   </div>
                   <span className="font-semibold text-gray-700 group-hover:text-blue-700">X/Twitter</span>
-                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
+                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-black transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
                 </a>
 
-                <a href="#" className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                  <div className="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">Y</span>
+                {/* YouTube */}
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaYoutube />
                   </div>
                   <span className="font-semibold text-gray-700 group-hover:text-blue-700">YouTube</span>
-                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
+                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-red-600 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
                 </a>
 
-                <a href="#" className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                  <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">T</span>
+                {/* TikTok */}
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  className="group relative flex items-center justify-center gap-3 p-3 border border-gray-200 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaTiktok />
                   </div>
                   <span className="font-semibold text-gray-700 group-hover:text-blue-700">TikTok</span>
-                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
+                  <span className="absolute left-3 right-3 bottom-0 h-0.5 bg-black transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -591,15 +617,15 @@ export default function Home() {
 
           {/* Large side-by-side images with rounded corners and hover effects */}
           <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3">
-            <img 
-              src="/Screenshot 2025-08-12 155728.png" 
-              alt="Flyer 1" 
-              className="w-full sm:w-1/2 max-h-[720px] object-contain block rounded-2xl border border-gray-200 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] cursor-pointer" 
+            <img
+              src="/Screenshot 2025-08-12 155728.png"
+              alt="Flyer 1"
+              className="w-full sm:w-1/2 max-h-[720px] object-contain block rounded-2xl border border-gray-200 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] cursor-pointer"
             />
-            <img 
-              src="/Screenshot 2025-08-12 155755.png" 
-              alt="Flyer 2" 
-              className="w-full sm:w-1/2 max-h-[720px] object-contain block rounded-2xl border border-gray-200 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] cursor-pointer" 
+            <img
+              src="/Screenshot 2025-08-12 155755.png"
+              alt="Flyer 2"
+              className="w-full sm:w-1/2 max-h-[720px] object-contain block rounded-2xl border border-gray-200 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] cursor-pointer"
             />
           </div>
         </div>
@@ -609,7 +635,7 @@ export default function Home() {
       <section className="px-6 sm:px-10 lg:px-20 mt-12">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center text-blue-700">Need Help?</h2>
-          
+
           <div className="space-y-4">
             {helpFaqs.map((faq, index) => (
               <Disclosure key={index} question={`${index + 1}. ${faq.q}`} answer={faq.a} />
@@ -623,18 +649,21 @@ export default function Home() {
         <div className="max-w-4xl mx-auto bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8 rounded-2xl text-center shadow-lg">
           <h3 className="text-2xl font-bold mb-3">Ready to join as an affiliate?</h3>
           <p className="mb-6">Sign up for free and start sharing your link to earn recurring commissions.</p>
-          <a 
-            href={AFFILIATE_BASE} 
+          <a
+            href={AFFILIATE_BASE}
             className="inline-block bg-white text-blue-600 font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:bg-gray-100 hover:shadow-lg hover:scale-105 transform"
           >
             Sign Up Free
           </a>
         </div>
       </section>
+
+
       {/* Footer - intentionally darker blue than the rest of the page */}
       <footer className="mt-14 bg-blue-900 text-white py-10">
         <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-20">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
+            {/* Brand Section */}
             <div>
               <h4 className="text-xl font-bold underline underline-offset-4">aartec.com</h4>
               <p className="text-sm mt-1">imagination to reality</p>
@@ -644,15 +673,54 @@ export default function Home() {
                 <p className="mt-2">205 Lavender Hill, London SW11 5TB, United Kingdom</p>
               </div>
             </div>
+
+            {/* Social Section */}
             <div>
               <h5 className="font-semibold mb-4 uppercase tracking-wide">Social Networks</h5>
               <div className="flex gap-4 items-center">
-                <a aria-label="facebook" className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-blue-900 font-bold">f</a>
-                <a aria-label="whatsapp" className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-green-600 font-bold">W</a>
-                <a aria-label="instagram" className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-pink-600 font-bold">I</a>
-                <a aria-label="linkedin" className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-blue-700 font-bold">in</a>
+                <a
+                  href="https://www.facebook.com/people/Aartec/61561667166483/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="facebook"
+                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-blue-900 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
+                >
+                  <FaFacebookF />
+                </a>
+
+                <a
+                  href="https://api.whatsapp.com/send?phone=447733003930"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="whatsapp"
+                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-green-600 hover:scale-110 hover:shadow-lg hover:shadow-green-500/50 transition-all duration-300"
+                >
+                  <FaWhatsapp />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/aartec1/#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="instagram"
+                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-pink-600 hover:scale-110 hover:shadow-lg hover:shadow-pink-500/50 transition-all duration-300"
+                >
+                  <FaInstagram />
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/company/aartec/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="linkedin"
+                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-blue-700 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
+                >
+                  <FaLinkedinIn />
+                </a>
               </div>
             </div>
+
+            {/* Browse Section */}
             <div>
               <h5 className="font-semibold mb-4 uppercase tracking-wide">Browse</h5>
               <p>Masters of Business Creation</p>
